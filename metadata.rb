@@ -1,25 +1,25 @@
-name             "elasticsearch"
+# Encoding: utf-8
+name             'elasticsearch'
+maintainer       'Karel Minarik'
+maintainer_email 'karel.minarik@elasticsearch.org'
+license          'Apache 2.0'
+description      'Installs and configures Elasticsearch'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '4.0.4'
 
-maintainer       "karmi"
-maintainer_email "karmi@karmi.cz"
-license          "Apache"
-description      "Installs and configures elasticsearch"
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.markdown'))
-version          "0.3.4"
+supports 'amazon'
+supports 'centos'
+supports 'debian'
+supports 'fedora'
+supports 'redhat'
+supports 'ubuntu'
 
+depends 'apt'
+depends 'yum'
+depends 'chef-sugar'
 depends 'ark'
 
-recommends 'build-essential'
-recommends 'xml'
-recommends 'java'
-recommends 'monit'
+issues_url       'https://github.com/elastic/cookbook-elasticsearch/issues'
+source_url       'https://github.com/elastic/cookbook-elasticsearch'
 
-provides 'elasticsearch'
-provides 'elasticsearch::data'
-provides 'elasticsearch::ebs'
-provides 'elasticsearch::aws'
-provides 'elasticsearch::nginx'
-provides 'elasticsearch::proxy'
-provides 'elasticsearch::plugins'
-provides 'elasticsearch::monit'
-provides 'elasticsearch::search_discovery'
+chef_version '>= 12.5' if respond_to?(:chef_version)
